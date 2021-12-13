@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="p1">player1: 0</h1>
+    <h1 id="p2">player2: 0</h2>
+    <button onclick="btnclick()">Roll dice</button>
+</body>
+<style>
+    body {
+        text-align: center;
+        background-color: peachpuff;
+        background-image: url("https://www.thesprucecrafts.com/thmb/284T1TCXUV7cBrItDN0i55ZqB3U=/1500x844/smart/filters:no_upscale()/dice-probabilities-rolling-2-sixsided-dice-411406_hero_3220-4c2f1909efb84327bd236c34e7610364.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #p1{
+        margin: 50px;
+    }
+    #p2{
+        margin: 50px;
+    }
+</style>
+<script>
+    var1=0;
+    var2=0;
+    var3=0;
+function btnclick(){
+    var3++;
+    let x=Math.floor(Math.random()*6+1);
+    
+    if((var3%2)==1)
+    {   
+        var1=var1+x;
+        
+    }
+    else
+    {           var2=var2+x;
+        
+    }
+    
+    document.getElementById("p1").innerHTML="player1:"+var1;
+    document.getElementById("p2").innerHTML="player2:"+var2;
+    if(var1>=10){
+        var3=0;
+        var1=0;
+        var2=0;
+        alert("player 1 wins");
+        document.getElementById("p1").innerHTML="player1: "+var1;
+        document.getElementById("p2").innerHTML="player2: "+var2;
+        return;
+    }
+    else if(var2>=10){
+        var3=0;
+        var1=0;
+        var2=0;
+        alert("player 2 wins");
+        document.getElementById("p1").innerHTML="player1: "+var1;
+        document.getElementById("p2").innerHTML="player2: "+var2;
+        return;
+    }
+}
+</script>
+</html>
